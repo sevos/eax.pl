@@ -8,7 +8,9 @@ filter:    haml
     %title EAX Artur Roszczyk
     %link{:rel => "stylesheet", :type => "text/css", :href => "css/site.css"}
 %body
-  %h1 EAX Artur Roszczyk
-  %h1= @page.title
+  #header
+    = render :partial => "header"
+  %h2= @page.title
   = @content
-  %address= "Ostatnia aktualizacja #{Time.now}"
+  #footer
+    = render :partial => "footer" 
