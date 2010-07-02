@@ -2,19 +2,19 @@
 extension: html
 filter:    haml
 ---
-
-%html
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "pl", :lang => "pl"}
   %head
-    %title EAX Artur Roszczyk
+    %title== EAX Artur Roszczyk - #{@page.title}
     %link{:rel => "stylesheet", :type => "text/css", :href => "stylesheets/application.css"}
-%body
-  #body
-    #header
-      = render :partial => "header"
-    #menu
-      = render :partial => "menu"
-    #content
-      %h2= @page.title
-      = @content
-    #footer
-      = render :partial => "footer" 
+  %body
+    #body
+      #header
+        = render :partial => "header"
+      #menu
+        = render :partial => "menu"
+      #content
+        %h1= @page.title
+        = @content
+      #footer
+        = render :partial => "footer" 
