@@ -1,0 +1,14 @@
+---
+extension: html
+filter:    haml
+---
+
+%html
+  %head
+    %title EAX Artur Roszczyk
+    %link{:rel => "stylesheet", :type => "text/css", :href => "css/site.css"}
+%body
+  %h1 EAX Artur Roszczyk
+  %h1= @page.title
+  = @content
+  %address= "Ostatnia aktualizacja #{Time.now}"

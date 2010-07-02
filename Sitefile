@@ -1,0 +1,11 @@
+
+task :default => :build
+
+desc 'deploy the site to the webserver'
+task :deploy => [:build, 'deploy:ssh']
+
+SITE.user = "sevos" #your ssh name to login to the server
+SITE.host = "onyxia.eax.pl" 
+SITE.remote_dir = "/var/www/eax.pl"
+
+# EOF
