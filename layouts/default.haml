@@ -6,11 +6,15 @@ filter:    haml
 %html
   %head
     %title EAX Artur Roszczyk
-    %link{:rel => "stylesheet", :type => "text/css", :href => "css/site.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "stylesheets/application.css"}
 %body
-  #header
-    = render :partial => "header"
-  %h2= @page.title
-  = @content
-  #footer
-    = render :partial => "footer" 
+  #body
+    #header
+      = render :partial => "header"
+    #menu
+      = render :partial => "menu"
+    #content
+      %h2= @page.title
+      = @content
+    #footer
+      = render :partial => "footer" 

@@ -6,3 +6,85 @@ layout: nil
 
 @import grid.sass
 @import text.sass
+
+=clearfix
+  *display:                 inline-block
+  &:after
+    content:                " "
+    display:                block
+    height:                 0
+    clear:                  both
+    visibility:             hidden
+
+=brdr
+  border: 1px dashed red
+
+=button
+  +grid(2,16)
+  margin: 0px
+  display: inline-block
+  text-decoration: none
+  text-align: center
+
+#body
+  +grid-system(16)
+  +clearfix
+  +grid-children
+  #header, #content, #footer, #menu
+    +grid(16,16)
+    +alpha
+    +omega
+
+#header
+
+  #title
+    +grid(7,16)
+    +alpha
+    h1
+      margin-top: 15px
+      font:
+        family: Arial Black
+        size: 20pt
+        wieght: bold
+
+  #address
+    +grid-prefix(4,16)
+    +grid(5,16)
+    +omega
+    +clearfix
+    margin-top: 10px
+    h1
+      font:
+        size: 12px
+        weight: bold
+      margin: 0px
+
+    dl
+      width: 160px
+      font:
+        size: 11px
+      margin: 0px
+      dt,dd
+        width: 80px
+        margin: 0
+      dt
+        float: left
+      dd
+        float: right
+
+#menu
+  background-color: black
+
+  ul
+    list-style: none
+    width: 100%
+
+    li
+      margin:
+        right: 10px
+      a
+        +button
+        color: white
+        &:hover
+          background-color: white
+          color: black
